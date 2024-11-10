@@ -40,6 +40,3 @@ src/
 └── utils/         # Utility functions
 ```
 
-## License
-
-MIT
