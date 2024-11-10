@@ -1,62 +1,45 @@
-# fll-teacher
-fine-llama-teacher-prototype
+# LLaMA Fine-tuning Project
 
-**Project: Fine-Tuning LLaMA 3.1 with GPT-4 Data**
-===========================================================
+This project provides tools for processing training data and fine-tuning LLaMA models.
 
-### Project Structure
+## Setup
 
-* **Data Processor (DataProcessor)**: Prepares GPT-4 data.
-* **Model Trainer (ModelTrainer)**: Performs fine-tuning.
-* **Logging System**: Logs all actions and errors.
-
-### Getting Started
----------------
-
-#### Install Dependencies
-
+1. Install dependencies:
 ```bash
 npm install
 ```
 
-#### Configure Environment
+2. Configure environment variables:
+- Copy `.env.example` to `.env`
+- Add your OpenAI API key
+- Adjust other settings as needed
 
-1. Copy `.env.example` to `.env`.
-2. Set the following paths in `.env`:
-	* LLaMA model (`MODEL_PATH`)
-	* GPT-4 data (`TRAINING_DATA_PATH`)
-	* Output directory (`OUTPUT_DIR`)
+## Usage
 
-### Run the Project
------------------
-
-#### Full Process (Data Processing + Training)
-
+### Process Training Data
 ```bash
-npm start
+npm run start process-data
 ```
 
-#### Only Data Processing
-
+### Start Training
 ```bash
-npm start process-data
+npm run start train
 ```
 
-#### Training with Custom Parameters
+### Options
+- `-e, --epochs`: Number of training epochs (default: 10)
+- `-b, --batch-size`: Batch size (default: 32)
 
-```bash
-npm start train --epochs 3 --batch-size 8
+## Project Structure
+
+```
+src/
+├── config/         # Configuration files
+├── processors/     # Data processing modules
+├── trainers/      # Model training modules
+└── utils/         # Utility functions
 ```
 
-where:
+## License
 
-* `epochs` - number of training epochs
-* `batch-size` - batch size
-
-### Monitoring
--------------
-
-* All logs are written to files:
-	+ `error.log` - only errors
-	+ `combined.log` - all actions
-* Logs are also printed to the console.
+MIT
