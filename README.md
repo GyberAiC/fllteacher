@@ -1,4 +1,4 @@
-# fllteacher
+# fll-teacher
 fine-llama-teacher-prototype
 
 **Project: Fine-Tuning LLaMA 3.1 with GPT-4 Data**
